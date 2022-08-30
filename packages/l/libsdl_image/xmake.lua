@@ -49,7 +49,7 @@ package("libsdl_image")
         os.cp(path.join("lib", arch, "*.lib"), package:installdir("lib"))
         os.cp(path.join("lib", arch, "*.dll"), package:installdir("bin"))
     end)
-
+ 
     on_install("macosx", "linux", function (package)
         local configs = {}
         table.insert(configs, "--enable-shared=" .. (package:config("shared") and "yes" or "no"))
